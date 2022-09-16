@@ -1,0 +1,29 @@
+parameters:
+  - $ref: ../components/parameters/x-okapi-tenant.yaml
+  - $ref: ../components/parameters/x-okapi-token.yaml
+post:
+  summary: Create Entity of specified type
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Entity.yaml
+  responses:
+    '201':
+      description: Success. Entity created
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Entity.yaml
+    '404':
+      description: Not found. Not possible to POST entity type
+      content:
+        text/plain:
+          schema:
+            type: string
+    '422':
+      description: Unprocessable Entity
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/ApplicationError.yaml

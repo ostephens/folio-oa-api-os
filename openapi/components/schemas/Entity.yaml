@@ -1,0 +1,9 @@
+oneOf:
+  - $ref: ./scholarlyWork.yaml
+  - $ref: ./publicationRequest.yaml
+  - $ref: ./titleInstances.yaml
+  - $ref: ./works.yaml
+  - $ref: ./party.yaml
+  - $ref: ./correspondence.yaml
+  - $ref: ./charges.yaml
+  - $ref: ./checklistItems.yaml
