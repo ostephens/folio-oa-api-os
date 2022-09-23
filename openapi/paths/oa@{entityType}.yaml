@@ -3,6 +3,7 @@ parameters:
   - $ref: ../components/parameters/x-okapi-token.yaml
   - $ref: ../components/parameters/entityType.yaml
 get:
+  operationId: getEntities
   summary: Returns list of specified entities
   parameters:
     - $ref: ../components/parameters/filters.yaml
@@ -21,7 +22,14 @@ get:
             oneOf:
               - $ref: ../components/schemas/Results.yaml
               - $ref: ../components/schemas/ResultsArray.yaml
+    '404':
+      description: Not found
+      content:
+        text/plain:
+          schema:
+            type: string
 post:
+  operationId: createEntity
   summary: Create Entity of specified type
   requestBody:
     content:

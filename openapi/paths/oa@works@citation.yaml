@@ -2,21 +2,22 @@ parameters:
   - $ref: ../components/parameters/x-okapi-tenant.yaml
   - $ref: ../components/parameters/x-okapi-token.yaml
 post:
-  summary: Create Entity of specified type
+  operationId: createCitation
+  summary: Create a work and instances based on a citation
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/Entity.yaml
+          $ref: ../components/schemas/Citation.yaml
   responses:
     '201':
       description: Success. Entity created
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Entity.yaml
+            $ref: ../components/schemas/Citation.yaml
     '404':
-      description: Not found. Not possible to POST entity type
+      description: Not found. Not possible to POST citation
       content:
         text/plain:
           schema:

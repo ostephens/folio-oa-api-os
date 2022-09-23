@@ -12,6 +12,7 @@ parameters:
     schema:
       type: string
 get:
+  operationId: getRefDat
   summary: Returns list of reference data values for specified domain/property
   parameters:
     - $ref: ../components/parameters/filters.yaml
@@ -30,3 +31,9 @@ get:
             oneOf:
               - $ref: ../components/schemas/Results.yaml
               - $ref: ../components/schemas/ResultsArray.yaml
+    '404':
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/HttpError.yaml
