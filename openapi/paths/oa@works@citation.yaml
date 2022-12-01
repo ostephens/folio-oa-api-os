@@ -23,7 +23,7 @@ post:
           schema:
             type: string
     '422':
-      description: Unprocessable Entity
+      description: Unprocessable Citation
       content:
         application/json:
           schema:
